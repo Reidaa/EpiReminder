@@ -27,6 +27,7 @@ class Ui_EventWidget(object):
         self.title_lbl = QtWidgets.QLabel(EventWidget)
         self.title_lbl.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.title_lbl.setText("")
+        self.title_lbl.setWordWrap(True)
         self.title_lbl.setObjectName("title_lbl")
         self.verticalLayout.addWidget(self.title_lbl)
         self.room_lbl = QtWidgets.QLabel(EventWidget)

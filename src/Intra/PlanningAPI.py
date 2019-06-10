@@ -1,5 +1,7 @@
 from typing import List, Tuple
 
+import requests
+
 from API import API
 
 
@@ -31,17 +33,14 @@ class Activity:
         thing = self.raw["start"]
         return thing.split()[0], thing.split()[1]
 
-    @property
     def is_registered(self) -> bool:
         thing = self.raw["event_registered"]
         return thing == "registered" or thing == "absent" or thing == "present"
 
-    @property
     def is_present(self) -> bool:
         thing = self.raw["event_registered"]
         return True if thing == "present" else False
 
-    @property
     def is_absent(self) -> bool:
         thing = self.raw["event_registered"]
         return thing == "absent"
@@ -66,16 +65,15 @@ class Activity:
 
 
 class PlanningAPI(API):
-    def __init__(self, username: str, autolog_token: str):
-        API.__init__(self, username, autolog_token)
+    def __init__(self, username: str, token: str):
+        API.__init__(self, username, token)
+        self._url = "/planning/load?format=json&start={start}&end={end}"
 
-    def get_raw_planning(self, start=None, end=None):
-        if start is None or end is None:
-            return None
-        return self._get("/planning/load?format=json&start={start}&end={end}".format(start=start, end=end))
+    def get_raw_planning(self, start: str, end: str) -> requests.Response:
+        return self._get(self._url.format(start=start, end=end))
 
     def get_planning(self, start=None, end=None) -> List[Activity]:
-        activities = []
+        activities: List[Activity] = []
         if start is None or end is None:
             pass
         else:
