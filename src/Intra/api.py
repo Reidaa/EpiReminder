@@ -22,9 +22,12 @@ class API:
         return "PAR-0-1"
 
     def check_log(self) -> bool:
-        is_token_valid: bool = self.check_token()
-        is_username_valid: bool = self.check_username()
-        return True if (is_token_valid is True and is_username_valid) is True else False
+        try:
+            is_token_valid: bool = self.check_token()
+            is_username_valid: bool = self.check_username()
+        except AssertionError:
+            return False
+        return True
 
     def check_token(self) -> bool:
         return self.get_autolog_token().status_code == 200

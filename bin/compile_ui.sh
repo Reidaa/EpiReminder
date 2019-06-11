@@ -7,7 +7,7 @@ location="../ui/"
 
 files=(
     EventWidget
-    LoggingWidget
+    LoggingDialog
     PlanningWidget
     ObjectivesWidget
     HelpObjectivesWidget

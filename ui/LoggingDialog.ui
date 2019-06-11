@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>LoggingWidget</class>
- <widget class="QWidget" name="LoggingWidget">
+ <class>LoggingDialog</class>
+ <widget class="QDialog" name="LoggingDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>233</height>
+    <height>204</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -48,39 +48,35 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="password_lineEdit">
+    <widget class="QLineEdit" name="token_lineEdit">
      <property name="enabled">
       <bool>true</bool>
      </property>
+     <property name="text">
+      <string/>
+     </property>
      <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
+      <enum>QLineEdit::Normal</enum>
      </property>
      <property name="placeholderText">
-      <string>password</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QCheckBox" name="show_password_checkbox">
-     <property name="text">
-      <string>Show password</string>
+      <string>auth-</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QCheckBox" name="remember_user_checkbox">
      <property name="text">
-      <string>Remember this username</string>
+      <string>Remember username</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="remember_password_checkbox">
+    <widget class="QCheckBox" name="remember_token_checkbox">
      <property name="enabled">
       <bool>true</bool>
      </property>
      <property name="text">
-      <string>Remember password</string>
+      <string>Remember token</string>
      </property>
     </widget>
    </item>
