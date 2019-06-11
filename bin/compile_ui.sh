@@ -8,8 +8,9 @@ location="../ui/"
 files=(
     EventWidget
     LoggingWidget
-    PlannerWidget
-    SimpleObjectivesWidget
+    PlanningWidget
+    ObjectivesWidget
+    HelpObjectivesWidget
 )
 
 for file in "${files[@]}"

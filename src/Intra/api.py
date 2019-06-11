@@ -10,7 +10,16 @@ class API:
             raise Exception("Wrong username and/or token")
 
     def _get(self, request_url: str) -> requests.Response:
-        return requests.get(self.base_url + self.token + request_url)
+        url = self.base_url + self.token + request_url
+        response = requests.get(url)
+        assert response.status_code == 200
+        return response
+
+    def get_current_academic_year(self) -> str:
+        return self.get_student().json()["scolaryear"]
+
+    def get_user_codeinstance(self) -> str:
+        return "PAR-0-1"
 
     def check_log(self) -> bool:
         is_token_valid: bool = self.check_token()
@@ -52,7 +61,7 @@ class API:
 
 
 if __name__ == "__main__":
-    with open("../../log.txt") as file:
+    with open("../log.txt") as file:
         lines = file.readlines()
-    intra = API(lines[0], lines[1])
+    intra = API(lines[0][:-1], lines[1][:-1]).get_student_notes().json()
     print(intra.check_log())

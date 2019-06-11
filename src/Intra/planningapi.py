@@ -2,7 +2,7 @@ from typing import List, Tuple
 
 import requests
 
-from API import API
+from api import API
 
 
 class Activity:

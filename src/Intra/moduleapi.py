@@ -2,7 +2,7 @@ from typing import List
 
 import requests
 
-from API import API
+from api import API
 
 
 class Activity:
@@ -37,18 +37,12 @@ class ModuleAPI(API):
         API.__init__(self, username, token)
         self._url = "/module/{academicyear}/{codemodule}/{codeinstance}/?format=json"
 
-    def get_current_academic_year(self) -> str:
-        return "2018"
-
-    def get_user_codeinstance(self) -> str:
-        return "PAR-0-1"
-
     def get_raw_module(self, academicyear: str, codemodule: str, codeinstance: str) -> requests.Response:
         return self._get(self._url.format(academicyear=academicyear, codemodule=codemodule, codeinstance=codeinstance))
 
-    def get_all_activities(self, academic_year: str, codemodule: str, codeinstance: str) -> List[Activity]:
+    def get_all_activities(self, academicyear: str, codemodule: str, codeinstance: str) -> List[Activity]:
         activities: List[Activity] = []
-        response = self.get_raw_module(academic_year, codemodule, codeinstance)
+        response = self.get_raw_module(academicyear, codemodule, codeinstance)
         for i, val in enumerate(response.json()["activites"]):
             activities.append(Activity(val))
         return activities

@@ -35,11 +35,6 @@ class Ui_EventWidget(object):
         self.room_lbl.setText("")
         self.room_lbl.setObjectName("room_lbl")
         self.verticalLayout.addWidget(self.room_lbl)
-        self.line = QtWidgets.QFrame(EventWidget)
-        self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
-        self.verticalLayout.addWidget(self.line)
 
         self.retranslateUi(EventWidget)
         QtCore.QMetaObject.connectSlotsByName(EventWidget)
