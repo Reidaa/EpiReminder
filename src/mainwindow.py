@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QGridLayout, QWidget, QDesktopWidget
 
-from loggingdialog import LoggingDialog
-from mainwidget import MainWidget
+from src.loggingdialog import LoggingDialog
+from src.mainwidget import MainWidget
 
 
 class MainWindow(QMainWindow):

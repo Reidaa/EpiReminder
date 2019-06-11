@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QGridLayout
 
-from objectiveswidget import ObjectivesWidget, HelpObjectiveWidget
-from planningwidget import PlanningWidget
+from src.objectiveswidget import ObjectivesWidget, HelpObjectiveWidget
+from src.planningwidget import PlanningWidget
 
 
 class MainWidget(QWidget):

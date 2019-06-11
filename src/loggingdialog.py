@@ -5,7 +5,7 @@ from typing import Optional
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import QDialog, QLabel, QWidget
 
-from api import API
+from src.intra.api import API
 from ui.Ui_LoggingDialog import Ui_LoggingDialog
 
 

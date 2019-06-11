@@ -2,10 +2,10 @@ import datetime
 
 from PyQt5.QtWidgets import QFrame
 
-from planningapi import PlanningAPI
+from src.intra.planningapi import PlanningAPI
+from src.utils import clear_layout
 from ui.Ui_EventWidget import Ui_EventWidget
 from ui.Ui_PlanningWidget import Ui_PlanningWidget
-from utils import clear_layout
 
 
 class PlanningData:

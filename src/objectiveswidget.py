@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QSpacerItem, QSizePolicy
 from qroundprogressbar import QRoundProgressBar
 
-from moduleapi import ModuleAPI
+from src.intra.moduleapi import ModuleAPI
 from ui.Ui_HelpObjectivesWidget import Ui_HelpObjectivesWidget
 from ui.Ui_ObjectivesWidget import Ui_ObjectivesWidget
 
