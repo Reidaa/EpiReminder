@@ -1,5 +1,6 @@
 import configparser
 import os
+from pathlib import Path
 from typing import Optional
 
 from PyQt5.QtCore import pyqtSlot, Qt
@@ -21,8 +22,9 @@ class ClickableLinkLabel(QLabel):
 
 class ConfData:
     def __init__(self):
+        self.__home = str(Path.home())
         self.config = configparser.ConfigParser()
-        self._path = os.path.abspath("ressources/EpiReminderConfig.ini")
+        self._path = self.__home + "/.epireminder.ini"
         self._exist = os.path.isfile(self._path)
         if self._exist is False:
             self.__create_conf_file()
