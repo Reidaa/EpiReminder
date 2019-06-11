@@ -46,10 +46,16 @@ class ObjectiveData:
                                                       codeinstance=self.api.get_user_codeinstance())
 
     def get_sharings(self):
-        self.sharings = self.api.get_all_activities(academicyear=self.api.get_current_academic_year(),
-                                                    codemodule="B-INN-001",
-                                                    codeinstance=self.api.get_user_codeinstance())
-        self.sharings = [i for i in self.sharings if len(i.events) != 0 and self.is_sharing(i.title)]
+        t_sharings = self.api.get_all_activities(academicyear=self.api.get_current_academic_year(),
+                                                 codemodule="B-INN-001",
+                                                 codeinstance=self.api.get_user_codeinstance())
+        t_sharings = [i for i in t_sharings if len(i.events) != 0 and self.is_sharing(i.title)]
+        w_sharings = self.api.get_all_activities(academicyear=self.api.get_current_academic_year(),
+                                                 codemodule="B-INN-000",
+                                                 codeinstance=self.api.get_user_codeinstance())
+        w_sharings = [i for i in w_sharings if len(i.events) != 0 and self.is_sharing(i.title)]
+        self.sharings = t_sharings + w_sharings
+        pass
 
     def get_hackathons(self):
         pass
@@ -188,9 +194,9 @@ if __name__ == "__main__":
     with open("../log.txt") as file:
         lines = file.readlines()
     app = QtWidgets.QApplication(sys.argv)
-    thing = ObjectivesWidget(username=lines[0][:-1], token=lines[1][:-1])
+    thing = ObjectivesWidget(username=lines[2][:-1], token=lines[3][:-1])
     thing.show()
     sys.exit(app.exec_())
 
-    # thing = ObjectiveData(username=lines[0][:-1], token=lines[1][:-1])
+    # thing = ObjectiveData(username=lines[2][:-1], token=lines[3][:-1])
     # thing.get_goals()
