@@ -49,11 +49,16 @@ class ModuleAPI(API):
 
     def get_user_activities(self, academicyear: str, codemodule: str, codeinstance: str):
         activities: List[Activity] = []
+        f_activities: List[Activity] = []
         response = self.get_raw_module(academicyear, codemodule, codeinstance)
         for i, val in enumerate(response.json()["activites"]):
             activities.append(Activity(val))
-        activities = [i for i in activities if (len(i.events) != 0 and i.events[0]["user_status"] == "present")]
-        return activities
+        activities = [i for i in activities if len(i.events) != 0]
+        for i in activities:
+            for n in i.events:
+                if n["user_status"] == "present":
+                    f_activities.append(i)
+        return f_activities
 
 
 if __name__ == "__main__":

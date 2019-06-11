@@ -106,3 +106,4 @@ venv.bak/
 log.txt
 .vscode
 .idea
+*.ini

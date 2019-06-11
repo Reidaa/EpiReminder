@@ -11,6 +11,7 @@ files=(
     PlanningWidget
     ObjectivesWidget
     HelpObjectivesWidget
+    test
 )
 
 for file in "${files[@]}"

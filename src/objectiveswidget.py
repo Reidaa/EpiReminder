@@ -34,11 +34,13 @@ class ObjectiveData:
         pass
 
     def get_talks(self):
+        print("talks")
         self.talks = self.api.get_user_activities(academicyear=self.api.get_current_academic_year(),
                                                   codemodule="B-INN-001",
                                                   codeinstance=self.api.get_user_codeinstance())
 
     def get_workshops(self):
+        print("workshops")
         self.workshops = self.api.get_user_activities(academicyear=self.api.get_current_academic_year(),
                                                       codemodule="B-INN-000",
                                                       codeinstance=self.api.get_user_codeinstance())
