@@ -1,8 +1,14 @@
+altgraph==0.16.1
 certifi==2019.3.9
 chardet==3.0.4
+future==0.17.1
 idna==2.8
+macholib==1.11
+pefile==2019.4.18
+PyInstaller==3.4
 PyQt5==5.12.1
 PyQt5-sip==4.19.15
 PyQt5-stubs==5.12.1.0
+qroundprogressbar==1.0.0
 requests==2.22.0
 urllib3==1.25.3
