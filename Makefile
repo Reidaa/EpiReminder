@@ -6,7 +6,7 @@ BUILD_DIR	=	build
 DIST_DIR	=	dist
 
 all:
-			pyinstaller --onefile $(SCRIPT_START)
+			pyinstaller --onefile $(SCRIPT_START) --noconsole
 			cp dist/EpiReminder .
 
 clean:

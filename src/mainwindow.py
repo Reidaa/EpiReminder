@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QGridLayout, QWidget, QDesktopWidget
 
 from src.loggingdialog import LoggingDialog
 from src.mainwidget import MainWidget
+import ressources.images
 
 
 class MainWindow(QMainWindow):
@@ -17,9 +18,7 @@ class MainWindow(QMainWindow):
         self.__conf_ui()
 
     def __conf_ui(self):
-        scriptDir = os.path.dirname(os.path.realpath(__file__))
         self.setWindowIcon(QIcon(":/images/icon.png"))
-        # self.setWindowIcon(QIcon("ressources/images/icon.png"))
         self.setCentralWidget(self._central_widget)
         self._central_widget.setLayout(self._central_layout)
         self._central_layout.addWidget(self._main_widget)
