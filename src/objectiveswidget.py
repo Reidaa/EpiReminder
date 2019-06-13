@@ -143,7 +143,7 @@ class ObjectivesWidget(QWidget, Ui_ObjectivesWidget):
 
     def _conf_ui(self):
         self.setupUi(self)
-        self.acculturation_progress = ProgressionWidget(self, "HubTalk", 4, 0)
+        self.acculturation_progress = ProgressionWidget(self, "Acculturation", 4, 0)
         self.experimentation_progress = ProgressionWidget(self, "Experimentation", 3, 0)
         # self.fruition_progress = MakersProgressionWidget(self, "Maker", 2, 0)
         self.sharing_progress = ProgressionWidget(self, "Sharing", 2, 0)
@@ -188,15 +188,16 @@ class HelpObjectiveWidget(QWidget, Ui_HelpObjectivesWidget):
 
 
 if __name__ == "__main__":
-    from PyQt5 import QtWidgets
+    from PyQt5.QtWidgets import QApplication
     import sys
 
     with open("../log.txt") as file:
         lines = file.readlines()
-    app = QtWidgets.QApplication(sys.argv)
-    thing = ObjectivesWidget(username=lines[2][:-1], token=lines[3][:-1])
+    app = QApplication(sys.argv)
+    thing = ObjectivesWidget(username=lines[0][:-1], token=lines[1][:-1])
     thing.show()
     sys.exit(app.exec_())
 
-    # thing = ObjectiveData(username=lines[2][:-1], token=lines[3][:-1])
+    # thing = ObjectiveData(username=lines[0][:-1], token=lines[1][:-1])
     # thing.get_goals()
+    pass

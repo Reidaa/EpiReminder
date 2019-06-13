@@ -7,7 +7,7 @@ DIST_DIR	=	dist
 
 all:
 			pyinstaller --onefile $(SCRIPT_START) --noconsole
-			cp dist/EpiReminder .
+			cp dist/EpiReminder bin/
 
 clean:
 			$(RM) -r $(DIST_DIR)/*
