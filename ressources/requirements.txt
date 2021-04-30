@@ -11,4 +11,4 @@ PyQt5-sip==4.19.15
 PyQt5-stubs==5.12.1.0
 qroundprogressbar==1.0.0
 requests==2.22.0
-urllib3==1.25.3
+urllib3==1.25.8
